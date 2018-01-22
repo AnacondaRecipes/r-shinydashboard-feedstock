@@ -10,8 +10,8 @@ package:
 source:
   fn: shinydashboard_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/shinydashboard_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/shinydashboard/shinydashboard_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/shinydashboard_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/shinydashboard/shinydashboard_{{ version }}.tar.gz
   sha256: 1ee38f257433d24455426bc9d85c36f588735a54fbf6143935fed9cccb3bf193
 
 
