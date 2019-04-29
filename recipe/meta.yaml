@@ -1,4 +1,4 @@
-{% set version = '0.7.0' %}
+{% set version = '0.7.1' %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -11,12 +11,13 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/shinydashboard_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/shinydashboard/shinydashboard_{{ version }}.tar.gz
-  sha256: 0b7b102e9e5bea78ddc4da628d072a358270f2db9b63a6ebe4d8bdce3066d883
+  sha256: 51a49945c6b8a684111a2ba4b2a5964e3a50610286ce0378e37ae02316620a4e
 
 build:
   merge_build_host: True  # [win]
   # If this is a new build for the same version, increment the build number.
   number: 0
+  noarch: generic
 
   # This is required to make R link correctly on Linux.
   rpaths:
@@ -30,11 +31,13 @@ requirements:
   host:
     - r-base
     - r-htmltools >=0.2.6
+    - r-promises
     - r-shiny >=1.0.0
 
   run:
     - r-base
     - r-htmltools >=0.2.6
+    - r-promises
     - r-shiny >=1.0.0
 
 test:
@@ -66,21 +69,21 @@ extra:
 
 # Package: shinydashboard
 # Title: Create Dashboards with 'Shiny'
-# Version: 0.7.0
+# Version: 0.7.1
 # Authors@R: c( person("Winston", "Chang", role = c("aut", "cre"), email = "winston@rstudio.com"), person("Barbara", "Borges Ribeiro", role = "aut", email = "barbara@rstudio.com"), person(family = "RStudio", role = "cph"), person(family = "Almasaeed Studio", role = c("ctb", "cph"), comment = "AdminLTE theme for Bootstrap"), person(family = "Adobe Systems Incorporated", role = c("ctb", "cph"), comment = "Source Sans Pro font") )
 # Description: Create dashboards with 'Shiny'. This package provides a theme on top of 'Shiny', making it easy to create attractive dashboards.
 # URL: http://rstudio.github.io/shinydashboard/
 # Depends: R (>= 3.0)
 # License: GPL (>= 2) | file LICENSE
-# Imports: utils, shiny (>= 1.0.0), htmltools (>= 0.2.6)
+# Imports: utils, shiny (>= 1.0.0), htmltools (>= 0.2.6), promises
 # BugReports: https://github.com/rstudio/shinydashboard
 # RoxygenNote: 6.0.1.9000
 # NeedsCompilation: no
-# Packaged: 2018-03-21 17:33:51 UTC; winston
+# Packaged: 2018-10-17 16:36:04 UTC; winston
 # Author: Winston Chang [aut, cre], Barbara Borges Ribeiro [aut], RStudio [cph], Almasaeed Studio [ctb, cph] (AdminLTE theme for Bootstrap), Adobe Systems Incorporated [ctb, cph] (Source Sans Pro font)
 # Maintainer: Winston Chang <winston@rstudio.com>
 # Repository: CRAN
-# Date/Publication: 2018-03-21 22:18:53 UTC
+# Date/Publication: 2018-10-17 18:00:02 UTC
 
 # See
 # http://docs.continuum.io/conda/build.html for
